@@ -16,25 +16,44 @@ This project analyzes the HAR (HTTP Archive) file generated from the ExactSpace 
 
    ```bash
    pip install selenium browsermob-proxy
-Set up BrowserMob Proxy:
+   ```
+   
+2. **Set up BrowserMob Proxy**:
 
 Download BrowserMob Proxy from the official website: https://github.com/lightbody/browsermob-proxy
-Extract and set the path to the browsermob-proxy executable in the script.
-WebDriver:
+Could you extract and set the path to the browsermob-proxy executable in the script?
+
+3. **WebDriver**:
 
 Download Chrome WebDriver from: https://sites.google.com/a/chromium.org/chromedriver/
 Ensure the WebDriver is accessible from your PATH.
-Usage
-Capture HAR Data: The script will capture the HTTP Archive data from the ExactSpace website and save it to a file called exactspace.har.
 
-Analyze HAR Data: The parse_har.py script analyzes the captured HAR file, categorizing HTTP status codes into groups (2XX, 3XX, 4XX, 5XX), and counts the occurrences of each status code.
+4. **Usage**:
+Capture HAR Data: Run The script will capture the HTTP Archive data from the ExactSpace website and save it to a file called exactspace.har.
+
+Analyze HAR Data: The parsing.py script analyzes the captured HAR file, categorizing HTTP status codes into groups (2XX, 3XX, 4XX, 5XX), and counts the occurrences of each status code.
 
 Run the analysis: Execute the parse_har.py file to parse and analyze the HAR file:
 
-bash
-Copy
-Edit
-python parse_har.py
 The output will display a summary of the status codes and their categories.
 
-Sample Output
+**Sample Output**:
+Status Code Counts:
+```
+{
+    200: 2497,
+    301: 156,
+    302: 96,
+    404: 73,
+    500: 12,
+    503: 8,
+    403: 5
+}
+Category Counts:
+{
+    '2XX': 2497,
+    '3XX': 302,
+    '4XX': 78,
+    '5XX': 20
+}
+```
